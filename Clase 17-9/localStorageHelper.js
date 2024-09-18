@@ -3,7 +3,7 @@ const getStudents = () =>{
     let students = localStorage.getItem('students');
 
     // chequeo si students esta en el Storage
-    if(students){
+    if(!students){
         students = [];
     }
     else{

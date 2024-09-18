@@ -2,15 +2,7 @@ const renderTable = () => {
     const tbody = document.getElementById('student_table');
     tbody.innerHTML = '';
 
-    let students = localStorage.getItem('students');
-
-    // chequeo si students esta en el Storage
-    if(students){
-        students = [];
-    }
-    else{
-        students = JSON.parse(students);
-    }
+    let students = getStudents();
 
     students.forEach((student) => {
         let row = document.createElement('tr');
@@ -18,4 +10,7 @@ const renderTable = () => {
 
         tbody.appendChild(row);
     });
+    
 };
+
+document.addEventListener('DOMContentLoaded', renderTable);
