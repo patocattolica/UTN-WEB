@@ -10,4 +10,4 @@ const addStudent = (event) => {
     localStorage.setItem('students',JSON.stringify(students));
 
     window.location.href = 'index.html';
-
+}
