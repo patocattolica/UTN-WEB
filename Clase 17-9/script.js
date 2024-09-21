@@ -1,5 +1,6 @@
 const addStudent = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
+    
     const name = document.getElementById('name').value;
     const lastname = document.getElementById('lastname').value;
 

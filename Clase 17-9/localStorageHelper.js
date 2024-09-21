@@ -3,12 +3,12 @@ const getStudents = () =>{
     let students = localStorage.getItem('students');
 
     // chequeo si students esta en el Storage
-    if(!students){
-        students = [];
-    }
-    else{
+    if(students){
         students = JSON.parse(students);
     }
+    else{
+        students = [];
+    }
 
-    return getStudents;
+    return students;
 }
