@@ -109,3 +109,9 @@ th, td{
     text-align: center;
     padding: 8px;
 }
+
+.grid{
+    
+    border: 1px solid black;
+    padding: 50px;
+}
