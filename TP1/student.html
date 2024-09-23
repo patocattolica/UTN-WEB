@@ -8,12 +8,30 @@
 </head>
 <body>
     <div class="navigation">
-        <h2>Trabajo Practico 1</h1>
+        <h3>Trabajo Practico 1</h3>
         <p class="item">Página Principal</p>
         <p class="item" id="itemSelected">Alumnos</p>
     </div>
     <div class="container">
-
+        <div class="header">
+            <h2 id="title">Alumnos</h2>
+            <button id="add"><a style="color: white;" href="formStudent.html">Agregar</a></button>
+        </div>
+        <div class="divider"></div>
+        <div id="search">
+            <input type="text" name="lastname" id="lastnameInput" placeholder="Buscar por apellido">
+            <button id="searchButton">Buscar</button>
+        </div>
+        <table id="studentsTable">
+            <thead>
+                <th>Legajo</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
