@@ -35,19 +35,15 @@
             </tbody>
         </table>
         <div class="pagination">
-            <div id="paginationControls">
-                <label for="recordsPerPage">Registros por página:</label>
-                <select id="recordsPerPage">
-                    <option value="3">3</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="30">30</option>
-                </select>
-                <button id="prevPage">Anterior</button>
-                <span id="pageInfo"></span>
-                <button id="nextPage">Siguiente</button>
-            </div>
-            
+            <label for="recordsPerPage">Ítems por página:</label>
+            <select id="recordsPerPage">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+    
+            <!-- Botones de paginación -->
+            <div id="pagination" class="page-buttons"></div>
         </div>
     </div>
 </body>

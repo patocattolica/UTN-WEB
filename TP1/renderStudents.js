@@ -15,44 +15,49 @@ const renderTable = (students) => {
         tbody.appendChild(row);
     });
 
-    document.getElementById('pageInfo').innerText = `Página ${currentPage} de ${Math.ceil(students.length / recordsPerPage)}`;
+    renderPaginationButtons(students);
+};
+
+const renderPaginationButtons = (students) => {
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = '';
+
+    let totalPages = Math.ceil(students.length / recordsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        let btn = document.createElement('button');
+        btn.classList.add('page-number');
+        if (i === currentPage) {
+            btn.classList.add('active');
+        }
+        btn.innerText = i;
+        btn.addEventListener('click', () => {
+            currentPage = i;
+            renderTable(filteredStudents);
+        });
+        paginationContainer.appendChild(btn);
+    }
 };
 
 const loadTable = () => {
-    const students = getStudents();
-    filteredStudents = students;  // Al principio, se muestran todos
+    const students = getStudents(); 
+    filteredStudents = students;
     renderTable(filteredStudents);
 };
 
 const searchByLastname = () => {
     const lastnameInput = document.getElementById('lastnameInput').value.toLowerCase();
-    filteredStudents = getStudents().filter(student => 
+    filteredStudents = getStudents().filter(student =>
         student.lastname.toLowerCase().includes(lastnameInput)
     );
-    currentPage = 1;  // Resetear a la primera página
+    currentPage = 1; // Resetear a la primera página
     renderTable(filteredStudents);
 };
-
-
 
 const updateRecordsPerPage = () => {
     recordsPerPage = parseInt(document.getElementById('recordsPerPage').value);
-    currentPage = 1;  // Resetear a la primera página
+    currentPage = 1; // Resetear a la primera página
     renderTable(filteredStudents);
-};
-
-const goToPrevPage = () => {
-    if (currentPage > 1) {
-        currentPage--;
-        renderTable(filteredStudents);
-    }
-};
-
-const goToNextPage = () => {
-    if (currentPage * recordsPerPage < filteredStudents.length) {
-        currentPage++;
-        renderTable(filteredStudents);
-    }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,6 +65,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('searchButton').addEventListener('click', searchByLastname);
     document.getElementById('recordsPerPage').addEventListener('change', updateRecordsPerPage);
-    document.getElementById('prevPage').addEventListener('click', goToPrevPage);
-    document.getElementById('nextPage').addEventListener('click', goToNextPage);
 });

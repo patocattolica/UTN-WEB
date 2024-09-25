@@ -115,12 +115,11 @@ th, td{
     padding: 8px;
 }
 
-#pagination{
+.pagination{
     width: 100%;
     display: flex;
     justify-content: end;
 }
-
 
 /* Exclusivo de formStudent */
 .parent {
@@ -154,4 +153,42 @@ th, td{
     height: 30px;
     border: 0px solid white;
     border-radius: 5px;
+}
+
+/* Paginacion */
+
+.pagination {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pagination label {
+    margin-right: 10px;
+}
+
+#recordsPerPage {
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.page-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.page-number {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+.page-number.active {
+    background-color: green;
+    color: white;
+}
+
+.page-number:hover {
+    background-color: #ddd;
 }
