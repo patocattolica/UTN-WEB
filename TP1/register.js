@@ -9,17 +9,25 @@ const recordStudents = () =>{
         index++;
         students.push({index,name,lastname});
         localStorage.setItem('students',JSON.stringify(students));
+
+        window.location.href = "student.html";
     }
     else{
         alert("Completar correctamente los campos!");
+        
+        window.location.href = "formStudent.html";
     }
 
-    window.location.href = "student.html";
+    
 }
 
 
-const validation = (string) =>{
-    if(string === ""){
+const validation = (str) =>{
+    // Usando expresiones regulares verificamos que no contenga digitos
+    let containNumber = /\d/.test(str);
+
+    // Verificamos que la cadena no este vacia o contenga digitos
+    if(str === "" || containNumber){
         return false;
     }
     else{
