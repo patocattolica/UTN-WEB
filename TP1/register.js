@@ -24,10 +24,10 @@ const recordStudents = () =>{
 
 const validation = (str) =>{
     // Usando expresiones regulares verificamos que no contenga digitos
-    let containNumber = /\d/.test(str);
+    let onlyLetters = /^[a-zA-Z\s]+$/.test(str);
 
     // Verificamos que la cadena no este vacia o contenga digitos
-    if(str === "" || containNumber){
+    if(str === "" || !onlyLetters){
         return false;
     }
     else{
