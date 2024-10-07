@@ -4,8 +4,7 @@ Instalamos express mediante terminal con express generator (npm install express-
 Buscar que es api rest
 que es un end point
 que es postman
-que es express
-que es node js
+	
 
 midleware
 se usan para por ejemplo verificar si esta viva una sesión o por ejemplo para una búsqueda por id verificar que el id sea un dato numerico.
